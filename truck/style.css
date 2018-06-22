@@ -1,0 +1,285 @@
+html,body{
+
+	width:100%;
+	height:100%;
+
+	margin:0;
+	padding:0;
+
+	font-family:'tahoma';
+
+	-webkit-transform: translate3d(0,0,0);
+
+	font-size:1em;
+
+	color:#333;
+
+	-webkit-user-select: none;  /* Chrome all / Safari all */
+	-moz-user-select: none;     /* Firefox all */
+	-ms-user-select: none;      /* IE 10+ */
+	user-select: none;          /* Likely future */   
+	
+	/*
+	
+	-webkit-user-select:none;
+
+
+
+	-webkit-touch-callout:none;
+	-webkit-tap-highlight-color:rgba(0, 0, 0, 0);		
+	-webkit-text-size-adjust:none;
+
+	-webkit-transform: translate3d(0,0,0);
+	-webkit-backface-visibility: hidden;
+
+	-webkit-font-smoothing: antialiased;
+	-webkit-font-smoothing: subpixel-antialiased;
+
+	-webkit-animation-fill-mode: forwards;
+	-webkit-backface-visibility: hidden;
+	*/
+	
+}
+
+/* common util */
+ul, ol{
+	list-style:none;
+	margin:0;
+	padding:0;
+}
+*{
+	box-sizing: border-box;
+}
+
+#capture{
+	position:absolute;
+	top:0;
+	left:0;
+	width:auto;
+	height:auto;
+	padding:1em;
+	z-index:999999;
+	font-weight:bold;
+	color:#fff;
+	background:#000;
+}
+#capture.on{
+	
+	background:red;
+}
+
+#dragBox{
+	position:absolute;
+	top:0;
+	left:0;
+	z-index:999999;
+}
+	#dragBox #coverBox{
+		background:red;
+		opacity:0.5;
+		position:absolute;
+		top:0;
+		left:0;
+		display:none;
+	}
+	#dragBox ul#coverBox_selector{
+		border:1px solid #dadada;	
+		border-bottom:none;	
+		width:auto;
+		height:auto;
+
+		position:absolute;
+		top:0;
+		left:0;
+		background:#fff;
+		display:none;
+	}
+		#dragBox ul#coverBox_selector li{
+			font-size:0.7rem;
+			line-height:1em;
+			padding:0.5em;
+			border-bottom:1px solid #dadada;
+			cursor:pointer;
+		}
+	#dragBox .clone{
+		padding:0.5em;
+		background:#45619d;
+		color:#fff;
+		font-size:0.7rem;
+		border:1px solid #162b59;
+		width:auto;
+		cursor:pointer;
+	}
+
+
+/* pannels */
+	.line{
+		cursor:pointer;
+		padding:0.5em 0.7em;
+	}
+	.line.on{
+		background:red;
+		color:#fff;
+	}
+	.line .prop{
+		color:#881280;
+	}
+
+
+	#eventBox{
+		
+		border:1px solid #dadada;
+		font-size:0.9rem;
+		line-height:1em;
+		margin-top:10px;
+		
+		width:auto;
+		height:100px;
+		
+	}
+
+
+	#varBox{
+		width:auto;
+		height:300px;
+		margin-top:0.3em;
+		position:relative;
+	}
+		#varBox ul.box{
+			display:inline-block;
+			position:relative;
+			font-size:0.7rem;
+			line-height:1em;
+			width:300px;
+			height:100%;
+			overflow:auto;
+			background:#fff;
+			border:1px solid #cccccc;
+		}
+			#varBox ul.box > li{
+				border-bottom:1px solid #dadada;
+			}
+			#varBox ul.box ul{
+				padding-left:1.5em;			
+			}
+	
+	#scopeBox{
+		position:absolute;
+		top:100px;
+		right:300px;
+		font-size:0.7rem;
+		line-height:1.7em;
+		z-index:900;
+		width:300px;
+		height:850px;
+		background:#fff;
+		border:1px solid #cccccc;
+	}
+
+	#helperBox{
+		position:absolute;
+		top:100px;
+		right:0;
+		font-size:0.7rem;
+		line-height:1.7em;
+		z-index:900;
+		width:300px;
+	}
+		
+		#clipBox{
+			width:100%;
+			height:50px;
+			background:#fff;
+			border:1px solid #cccccc;
+			border-bottom:none;
+		}
+
+		ul#infoBox{
+			width:100%;
+			height:800px;
+			background:#fff;
+			border:1px solid #cccccc;
+			overflow:auto;
+			padding-top:0.3em;
+			padding-bottom:0.3em;
+		}
+			ul#infoBox ul{
+				padding-left:1.2em;
+			}
+			ul#infoBox > li{
+				/*
+				border-bottom:1px solid #dadada;
+				*/
+			}
+			ul#infoBox li .wrap{
+				cursor:pointer;
+				padding:0 0.7em;
+				white-space:nowrap;
+			}
+				ul#infoBox li .wrap.on{
+					background:#ebf2fc;
+				}
+
+			/**/
+			ul#infoBox .prop{
+				color:#881391;
+			}
+			ul#infoBox .string{
+				color:#c41a16;
+			}
+			ul#infoBox .number{
+				color:#1c00cf;
+			}
+
+
+
+	#functionBox{
+
+		font-size:0.9rem;
+		line-height:1em;
+		margin-top:10px;
+
+	}
+		#functionBox span{
+			cursor:pointer;
+			color: #45619d;
+			padding:0.5em 1em;
+			display: inline-block;
+		}
+
+		#functionBox span.on{
+			background:#1e1e1e;
+			color: #fff;
+		}
+
+	#editBox{
+		
+		-webkit-user-select: auto;  /* Chrome all / Safari all */
+		-moz-user-select: auto;     /* Firefox all */
+		-ms-user-select: auto;      /* IE 10+ */
+		user-select: auto;          /* Likely future */   
+
+		width:auto;
+		height:300px;
+		font-size:0.7rem;
+		line-height:1.5em;
+		background:#1e1e1e;
+		color:#efc090;
+	}
+		#editBox .line{
+
+			padding:1em;
+			cursor:text;
+		}
+
+		#editBox .right{
+			padding-left:1em;
+		}
+
+	#eventBox{
+		border:1px solid #dadada;
+		font-size:0.9rem;
+		line-height:1em;
+		margin-top:10px;
+	}
+

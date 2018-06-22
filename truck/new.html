@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<!-- meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" -->
+
+	<!-- script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script -->
+
+	<meta name="viewport" content="initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+	<link rel="stylesheet" href="./style.css?v=0">
+	<script src="./src/angular.js?v=0"></script>
+	<script src="./src/new.js?v=0"></script>
+
+	<title>autoScript</title>
+
+
+</head>
+
+<body>
+	<div>
+		<p>test div</p>
+	</div>
+	<div>test div</div>
+	<div id="aa2">test div</div>
+
+	<script>
+
+	var ttt = 10000;
+	var elem = document.getElementById('aa2');
+	while(ttt--){
+		var newElem = document.createElement('div');
+		newElem.className = 'imsi';
+		elem.appendChild(newElem);
+		elem = newElem;
+
+		//manyArr[manyArr.length] = ttt;
+	}
+
+	</script>
+</body>
+</html>
